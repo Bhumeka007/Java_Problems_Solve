@@ -1,0 +1,43 @@
+package problem1;
+class BankAccount{
+	String name;
+	int id;
+	double blance;
+
+	BankAccount(String n, int i, double b){
+		name n;
+		id = i;
+		blance = b;
+	}
+	void depositAmmount(double depAmmount){
+		blance += depAmmount;
+	}
+	void withdraw(double withAmmount){
+		if(blance - withAmmount >=0)
+		{
+			blance -= withAmmount;
+		}
+		else
+		{
+			System.out.println("Not enough");
+		}
+	}
+	double getBalance(){
+		return blance;
+	}
+	void display(){
+		System.out.println("Name: ["+name+"]");
+		System.out.println("ID: ["+id+"]");
+		System.out.println("Blance: ["+blance+"]");
+	}
+}
+public class Bank{
+	public static void main(String[] a){
+		BankAccount bankAccount = new BankAccount("Sumaiya Bhumeka", 19101026, 1232654.326);
+		System.out.println("Name: " +bankAccount.name);
+		System.out.println("ID: " +bankAccount.id);
+		System.out.println("Blance: " +bankAccount.blance);
+		bankAccount.deposit(200);
+		bankAccount.withdraw(10);
+	}
+}
